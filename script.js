@@ -46,11 +46,11 @@
 '</div>'
 
 		function try() {
-			var ele = document.getElementsByClassName("barMiddle")[0];
-    if (!ele.size()) {
+			var elem = document.getElementsByClassName("barMiddle")[0];
+    if (!elem.size()) {
       window.requestAnimationFrame(try);
     }else {
-       ele.innerHTML = exileHtmlInject;
+       elem.innerHTML = exileHtmlInject;
      }
     }
 
