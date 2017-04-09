@@ -43,12 +43,12 @@
 	'<!--End Exil DIVS-->' +
 	'<div class="toolbarButton screencastStopButton notVisible" data-tooltip="Stop Sharing"></div>' +
 	'<div class="toolbarButton gameStopButton notVisible" data-tooltip="Stop Game"></div>' +
-'</div>'
+'</div>';
 
-		function try() {
+		function tryLoad() {
 			var elem = document.getElementsByClassName("barMiddle")[0];
     if (!elem.size()) {
-      window.requestAnimationFrame(try);
+      window.requestAnimationFrame(tryLoad);
     }else {
        elem.innerHTML = exileHtmlInject;
      }
