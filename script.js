@@ -44,8 +44,9 @@
 	'<div class="toolbarButton screencastStopButton notVisible" data-tooltip="Stop Sharing"></div>' +
 	'<div class="toolbarButton gameStopButton notVisible" data-tooltip="Stop Game"></div>' +
 '</div>'
-    setInterval(waitForDiv,500);
-		
+
+		var middleLoop = setInterval(waitForDiv,500);
+
 		function waitForDiv()
 		{
 			var elem = document.getElementsByClassName("barMiddle")[0];
@@ -54,7 +55,7 @@
 				elem.innerHTML = exileHtmlInject;
 			  document.getElementById('exileOP').onclick = doChatPOP;
 				console.log("GETS !!!");
-				clearInterval(myVar);
+				clearInterval(middleLoop);
 			}
 			else
 			{
