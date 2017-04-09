@@ -43,16 +43,24 @@
 	'<!--End Exil DIVS-->' +
 	'<div class="toolbarButton screencastStopButton notVisible" data-tooltip="Stop Sharing"></div>' +
 	'<div class="toolbarButton gameStopButton notVisible" data-tooltip="Stop Game"></div>' +
-'</div>';
-
-		function tryLoad() {
+'</div>'
+    setInterval(waitForDiv,500);
+		
+		function waitForDiv()
+		{
 			var elem = document.getElementsByClassName("barMiddle")[0];
-    if (!elem.size()) {
-      window.requestAnimationFrame(tryLoad);
-    }else {
-       elem.innerHTML = exileHtmlInject;
-     }
-    }
+			if (typeof elem !== 'undefined')
+			{
+				elem.innerHTML = exileHtmlInject;
+			  document.getElementById('exileOP').onclick = doChatPOP;
+				console.log("GETS !!!");
+				clearInterval(myVar);
+			}
+			else
+			{
+				console.log("Missed :c");
+			}
+		}
 
 		function doChatPOP() {
 			var w = window.open();
@@ -61,6 +69,5 @@
 			alert("Fucko");
 		}
 
-		document.getElementById('exileOP').onclick = doChatPOP;
 	});
 })();
